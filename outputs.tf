@@ -1,6 +1,6 @@
 output "id" {
   description = "Recovery Services Vault id"
-  value       = "${azurerm_recovery_services_vault,vault.id}"
+  value       = "${azurerm_recovery_services_vault.vault.id}"
 }
 
 output "name" {
@@ -10,5 +10,5 @@ output "name" {
 
 output "resource_group_name" {
   description = "Resource Group Name"
-  value       = "${azurerm_recovery_services_vault,vault.resource_group_name}"
+  value       = "${azurerm_recovery_services_vault.vault.resource_group_name}"
 }
