@@ -47,7 +47,7 @@ variable "time" {
 
 variable "count" {
   description = "(Required) The number of daily backups to keep. Must be between 1 and 9999"
-  default     = 2
+  default     = "2"
 }
 
 variable "source_vm_id" {
