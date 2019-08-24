@@ -18,7 +18,7 @@ resource "azurerm_recovery_services_protection_policy_vm" "vault_policy" {
 
   backup {
     frequency = "${var.frequency}"
-    time      = "${var.time}"
+    times     = "${var.time}"
   }
 
   retention_daily {
