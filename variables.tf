@@ -42,7 +42,7 @@ variable "frequency" {
 
 variable "timezone" {
   description = "(Optional) Specifies the timezone. Defaults to UTC"
-  default     = "Asia/Tokyo"
+  default     = "UTC"
 }
 
 variable "count" {
