@@ -30,9 +30,9 @@ variable "recovery_services_protection_policy_name" {
   description = "(Required) Specifies the name of name of the Recovery Services Vault Policy. Changing this forces a new resource to be created."
 }
 
-variable "time" {
-  description = "(Required) The time of day to perform the backup in 24hour format."
-  default     = "03:00"
+variable "timezone" {
+  description = "(Optional) Specifies the timezone. Defaults to UTC"
+  default     = "UTC"
 }
 
 variable "frequency" {
@@ -40,9 +40,9 @@ variable "frequency" {
   default     = "Daily"
 }
 
-variable "timezone" {
-  description = "(Optional) Specifies the timezone. Defaults to UTC"
-  default     = "UTC"
+variable "time" {
+  description = "(Required) The time of day to perform the backup in 24hour format."
+  default     = "23:00"
 }
 
 variable "count" {
