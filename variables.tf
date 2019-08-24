@@ -25,3 +25,31 @@ variable "tags" {
     tag2 = ""
   }
 }
+
+variable "recovery_services_protection_policy_name" {
+  description = "(Required) Specifies the name of name of the Recovery Services Vault Policy. Changing this forces a new resource to be created."
+}
+
+variable "time" {
+  description = "(Required) The time of day to perform the backup in 24hour format."
+  default     = "03:00"
+}
+
+variable "frequency" {
+  description = "(Required) Sets the backup frequency. Must be either Daily orWeekly"
+  default     = "Daily"
+}
+
+variable "timezone" {
+  description = "(Optional) Specifies the timezone. Defaults to UTC"
+  default     = "JST"
+}
+
+variable "count" {
+  description = "(Required) The number of daily backups to keep. Must be between 1 and 9999"
+  default     = 2
+}
+
+variable "source_vm_id" {
+  description = "(Required) Specifies the ID of the VM to backup. Changing this forces a new resource to be created."
+}

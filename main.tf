@@ -8,3 +8,27 @@ resource "azurerm_recovery_services_vault" "vault" {
   resource_group_name = "${var.resource_group_name}"
   sku                 = "${var.sku}"
 }
+
+resource "azurerm_recovery_services_protection_policy_vm" "vault_policy" {
+  name                = "${var.recovery_services_protection_policy_name}"
+  resource_group_name = "${var.resource_group_name}"
+  recovery_vault_name = "${var.recovery_services_vault_name}"
+
+  timezone = "${var.timezone}"
+
+  backup {
+    frequency = "${var.frequency}"
+    time      = "${var.time}"
+  }
+
+  retention_daily {
+    count = "${var.count}"
+  }
+}
+
+resource "azurerm_recovery_services_protected_vm" "protected_vm" {
+  resource_group_name = "${var.resource_group_name}"
+  recovery_vault_name = "${var.recovery_services_vault_name}"
+  source_vm_id        = "${var.source_vm_id}"
+  backup_policy_id    = "${azurerm_recovery_services_protection_policy_vm.vault_policy.id}"
+}
