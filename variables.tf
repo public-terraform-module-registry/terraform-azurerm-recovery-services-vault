@@ -32,7 +32,7 @@ variable "recovery_services_protection_policy_name" {
 
 variable "timezone" {
   description = "(Optional) Specifies the timezone. Defaults to UTC"
-  default     = "UTC"
+  default     = "Asia/Tokyo"
 }
 
 variable "frequency" {
@@ -42,7 +42,7 @@ variable "frequency" {
 
 variable "time" {
   description = "(Required) The time of day to perform the backup in 24hour format."
-  default     = "23:00"
+  default     = "03:00"
 }
 
 variable "retention_daily_count" {

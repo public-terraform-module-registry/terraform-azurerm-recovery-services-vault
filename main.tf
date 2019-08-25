@@ -14,6 +14,8 @@ resource "azurerm_recovery_services_protection_policy_vm" "vault_policy" {
   resource_group_name = "${var.resource_group_name}"
   recovery_vault_name = "${var.recovery_services_vault_name}"
 
+  timezone = "${var.timezone}"
+
   backup {
     frequency = "${var.frequency}"
     time      = "${var.time}"
