@@ -20,7 +20,7 @@ resource "azurerm_recovery_services_protection_policy_vm" "vault_policy" {
   }
 
   retention_daily {
-    count = "${var.retetion_daily_count}"
+    count = "${var.retention_daily_count}"
   }
 
   depends_on = ["azurerm_recovery_services_vault.vault"]
