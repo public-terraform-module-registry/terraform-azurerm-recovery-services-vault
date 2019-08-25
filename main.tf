@@ -15,12 +15,12 @@ resource "azurerm_recovery_services_protection_policy_vm" "vault_policy" {
   recovery_vault_name = "${var.recovery_services_vault_name}"
 
   backup {
-    frequency = "Daily"
-    time      = "23:00"
+    frequency = "${var.frequency}"
+    time      = "${var.time}"
   }
 
   retention_daily {
-    count = 2
+    count = "${var.count}"
   }
 
   depends_on = ["azurerm_recovery_services_vault.vault"]
