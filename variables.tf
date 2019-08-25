@@ -30,9 +30,10 @@ variable "recovery_services_protection_policy_name" {
   description = "(Required) Specifies the name of name of the Recovery Services Vault Policy. Changing this forces a new resource to be created."
 }
 
+## [Bug] Cannot select other than UTC
 variable "timezone" {
   description = "(Optional) Specifies the timezone. Defaults to UTC"
-  default     = "Asia/Tokyo"
+  default     = "UTC"
 }
 
 variable "frequency" {
@@ -42,9 +43,10 @@ variable "frequency" {
 
 variable "time" {
   description = "(Required) The time of day to perform the backup in 24hour format."
-  default     = "03:00"
+  default     = "18:00"
 }
 
+## [Bug] Should choose higher than 6
 variable "retention_daily_count" {
   description = "(Required) The number of daily backups to keep. Must be between 1 and 9999"
   default     = 7
