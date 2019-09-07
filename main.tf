@@ -35,3 +35,11 @@ resource "azurerm_recovery_services_protected_vm" "protected_vm" {
   backup_policy_id    = "${azurerm_recovery_services_protection_policy_vm.vault_policy.id}"
   depends_on          = ["azurerm_recovery_services_vault.vault", "azurerm_recovery_services_protection_policy_vm.vault_policy"]
 }
+
+resource "azurerm_storage_account" "restore_storage_account" {
+  name                     = "${var.restore_storage_account_name}"
+  location                 = "${var.location}"
+  account_tier             = "${var.restore_storage_account_tier}"
+  resource_group_name      = "${var.resource_group_name}"
+  account_replication_type = "${var.restore_storage_account_replication_type}"
+}

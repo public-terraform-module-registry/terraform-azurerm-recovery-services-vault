@@ -28,3 +28,7 @@ output "recovery_services_protected_vm_id" {
   value       = "${azurerm_recovery_services_protected_vm.protected_vm.source_vm_id}"
 }
 
+output "restore_storage_account_name" {
+  description = "Restore storage account name temporarily used when restoring VM"
+  value = "${azurerm_storage_account.restore_storage_account.name}"
+}
