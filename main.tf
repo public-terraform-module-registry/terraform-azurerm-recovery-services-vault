@@ -34,4 +34,4 @@ resource "azurerm_recovery_services_protected_vm" "protected_vm" {
   source_vm_id        = "${var.source_vm_id}"
   backup_policy_id    = "${azurerm_recovery_services_protection_policy_vm.vault_policy.id}"
   depends_on          = ["azurerm_recovery_services_vault.vault", "azurerm_recovery_services_protection_policy_vm.vault_policy"]
-
+}
