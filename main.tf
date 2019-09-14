@@ -45,6 +45,6 @@ resource "azurerm_storage_account" "restore_storage_account" {
 
   network_rules {
     default_action             = "${var.default_action}"
-    virtual_network_subnet_ids = "${var.virtual_network_subnet_ids}"
+    virtual_network_subnet_ids = ["${var.virtual_network_subnet_ids}"]
   }
 }
