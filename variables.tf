@@ -78,4 +78,5 @@ variable "default_action" {
 
 variable "virtual_network_subnet_ids" {
   description = "(Required) A list of resource ids for subnets."
+  type = "list"
 }
