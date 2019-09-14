@@ -42,4 +42,9 @@ resource "azurerm_storage_account" "restore_storage_account" {
   account_tier             = "${var.restore_storage_account_tier}"
   resource_group_name      = "${var.resource_group_name}"
   account_replication_type = "${var.restore_storage_account_replication_type}"
+
+  network_rules {
+    default_action             = "${var.default_action}"
+    virtual_network_subnet_ids = "${var.virtual_network_subnet_ids}"
+  }
 }
