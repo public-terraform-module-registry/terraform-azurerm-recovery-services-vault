@@ -55,28 +55,3 @@ variable "retention_daily_count" {
 variable "source_vm_id" {
   description = "(Required) Specifies the ID of the VM to backup. Changing this forces a new resource to be created."
 }
-
-variable "restore_storage_account_name" {
-  description = "(Required) Specifies the human consumable label for this resource."
-  default     = ""
-}
-
-variable "restore_storage_account_replication_type" {
-  description = "(Required) Defines the type of replication to use for this storage account. Valid options are LRS*, GRS, RAGRS and ZRS."
-  default     = "LRS"
-}
-
-variable "restore_storage_account_tier" {
-  description = "(Required) Defines the Tier to use for this storage account. Valid options are Standard* and Premium. Changing this forces a new resource to be created"
-  default     = "Standard"
-}
-
-variable "default_action" {
-  description = "(Required) Specifies the default action of allow or deny when no other rules match. Valid options are Deny or Allow."
-  default     = "Deny"
-}
-
-variable "virtual_network_subnet_ids" {
-  description = "(Required) A list of resource ids for subnets."
-  type = "list"
-}
